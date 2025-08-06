@@ -75,15 +75,15 @@
           "parameters": [
             {
               "name": "repository",
-              "value": "={{ $json.repository.full_name }}"
+              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
             },
             {
               "name": "pr_number",
-              "value": "={{ $json.number }}"
+              "value": "={{ $('GitHub Webhook').item.json.number }}"
             },
             {
               "name": "diff_url",
-              "value": "={{ $json.pull_request.diff_url }}"
+              "value": "={{ $('GitHub Webhook').item.json.pull_request.diff_url }}"
             },
             {
               "name": "llm_model",
@@ -121,15 +121,15 @@
           "parameters": [
             {
               "name": "repository",
-              "value": "={{ $json.repository.full_name }}"
+              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
             },
             {
               "name": "pr_number",
-              "value": "={{ $json.number }}"
+              "value": "={{ $('GitHub Webhook').item.json.number }}"
             },
             {
               "name": "changed_files",
-              "value": "={{ $json.pull_request.changed_files }}"
+              "value": "={{ $('GitHub Webhook').item.json.pull_request.changed_files }}"
             },
             {
               "name": "llm_model",
@@ -205,15 +205,15 @@
           "parameters": [
             {
               "name": "repository",
-              "value": "={{ $json.repository.full_name }}"
+              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
             },
             {
               "name": "branch",
-              "value": "={{ $json.pull_request.head.ref }}"
+              "value": "={{ $('GitHub Webhook').item.json.pull_request.head.ref }}"
             },
             {
               "name": "commit_sha",
-              "value": "={{ $json.pull_request.head.sha }}"
+              "value": "={{ $('GitHub Webhook').item.json.pull_request.head.sha }}"
             },
             {
               "name": "llm_model",
@@ -251,11 +251,11 @@
           "parameters": [
             {
               "name": "repository",
-              "value": "={{ $json.repository.full_name }}"
+              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
             },
             {
               "name": "commit_sha",
-              "value": "={{ $json.pull_request.head.sha }}"
+              "value": "={{ $('GitHub Webhook').item.json.pull_request.head.sha }}"
             },
             {
               "name": "build_prediction",
@@ -297,7 +297,7 @@
           "parameters": [
             {
               "name": "repository",
-              "value": "={{ $json.repository.full_name }}"
+              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
             },
             {
               "name": "image_tag",
@@ -397,7 +397,7 @@
             },
             {
               "name": "message",
-              "value": "🚀 DevOps Pipeline completed successfully for {{ $json.repository.full_name }} PR #{{ $json.number }}"
+              "value": "🚀 DevOps Pipeline completed successfully for {{ $('GitHub Webhook').item.json.repository.full_name }} PR #{{ $('GitHub Webhook').item.json.number }}"
             },
             {
               "name": "deployment_url",
