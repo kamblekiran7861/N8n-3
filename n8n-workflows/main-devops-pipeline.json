@@ -1,0 +1,137 @@
+@@ .. @@
+         "bodyParameters": {
+           "parameters": [
+             {
+               "name": "repository",
+-              "value": "={{ $json.repository.full_name }}"
++              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
+             },
+             {
+               "name": "pr_number",
+-              "value": "={{ $json.number }}"
++              "value": "={{ $('GitHub Webhook').item.json.number }}"
+             },
+             {
+               "name": "diff_url",
+-              "value": "={{ $json.pull_request.diff_url }}"
++              "value": "={{ $('GitHub Webhook').item.json.pull_request.diff_url }}"
+             },
+             {
+               "name": "llm_model",
+               "value": "gpt-4"
+             }
+           ]
+         },
+@@ .. @@
+         "bodyParameters": {
+           "parameters": [
+             {
+               "name": "repository",
+-              "value": "={{ $json.repository.full_name }}"
++              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
+             },
+             {
+               "name": "pr_number",
+-              "value": "={{ $json.number }}"
++              "value": "={{ $('GitHub Webhook').item.json.number }}"
+             },
+             {
+               "name": "changed_files",
+-              "value": "={{ $json.pull_request.changed_files }}"
++              "value": "={{ $('GitHub Webhook').item.json.pull_request.changed_files }}"
+             },
+             {
+               "name": "llm_model",
+               "value": "gpt-4"
+             }
+           ]
+         },
+@@ .. @@
+             {
+               "id": "condition-1",
+-              "leftValue": "={{ $json.repository.full_name }}",
++              "leftValue": "={{ $('GitHub Webhook').item.json.repository.full_name }}",
+               "rightValue": "approved",
+               "operator": {
+                 "type": "string",
+@@ .. @@
+         "bodyParameters": {
+           "parameters": [
+             {
+               "name": "repository",
+-              "value": "={{ $json.repository.full_name }}"
++              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
+             },
+             {
+               "name": "branch",
+-              "value": "={{ $json.pull_request.head.ref }}"
++              "value": "={{ $('GitHub Webhook').item.json.pull_request.head.ref }}"
+             },
+             {
+               "name": "commit_sha",
+-              "value": "={{ $json.pull_request.head.sha }}"
++              "value": "={{ $('GitHub Webhook').item.json.pull_request.head.sha }}"
+             },
+             {
+               "name": "llm_model",
+               "value": "gpt-4"
+             }
+           ]
+         },
+@@ .. @@
+         "bodyParameters": {
+           "parameters": [
+             {
+               "name": "repository",
+-              "value": "={{ $json.repository.full_name }}"
++              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
+             },
+             {
+               "name": "commit_sha",
+-              "value": "={{ $json.pull_request.head.sha }}"
++              "value": "={{ $('GitHub Webhook').item.json.pull_request.head.sha }}"
+             },
+             {
+               "name": "build_prediction",
+               "value": "={{ $('Build Predictor Agent').item.json }}"
+             },
+             {
+               "name": "action",
+               "value": "build_and_push"
+             }
+           ]
+         },
+@@ .. @@
+         "bodyParameters": {
+           "parameters": [
+             {
+               "name": "repository",
+-              "value": "={{ $json.repository.full_name }}"
++              "value": "={{ $('GitHub Webhook').item.json.repository.full_name }}"
+             },
+             {
+               "name": "image_tag",
+               "value": "={{ $('Docker/K8s Handler').item.json.image_tag }}"
+             },
+             {
+               "name": "environment",
+               "value": "staging"
+             },
+             {
+               "name": "kubernetes_config",
+               "value": "={{ $('Docker/K8s Handler').item.json.k8s_manifests }}"
+             }
+           ]
+         },
+@@ .. @@
+             {
+               "name": "message",
+-              "value": "🚀 DevOps Pipeline completed successfully for {{ $json.repository.full_name }} PR #{{ $json.number }}"
++              "value": "🚀 DevOps Pipeline completed successfully for {{ $('GitHub Webhook').item.json.repository.full_name }} PR #{{ $('GitHub Webhook').item.json.number }}"
+             },
+             {
+               "name": "deployment_url",
+               "value": "={{ $('Deploy Agent').item.json.deployment_url }}"
+             }
+           ]
+         },
